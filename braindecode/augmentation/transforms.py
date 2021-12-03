@@ -687,7 +687,7 @@ class FrequencyShift(Transform):
         max_delta_freq = self.max_delta_freq
         if isinstance(max_delta_freq, torch.Tensor):
             max_delta_freq = max_delta_freq.to(X.device)
-        delta_freq = u * 2 * max_delta_freq - max_delta_freq
+        delta_freq = u * max_delta_freq
         return {
             "delta_freq": delta_freq,
             "sfreq": self.sfreq,
